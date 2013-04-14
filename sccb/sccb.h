@@ -1,0 +1,168 @@
+#ifndef sccb_h
+#define sccb_h
+
+#define WRITE_ADDR 0x42
+#define READ_ADDR 0x43
+#define GAIN_ADDR 0x00
+#define BLUE_ADDR 0x01
+#define RED_ADDR 0x02
+#define VREF_ADDR 0x03
+#define COM1_ADDR 0x04
+#define BAVE_ADDR 0x05
+#define GBAVE_ADDR 0x06
+#define AECHH_ADDR 0x07
+#define RAVE_ADDR 0x08
+#define COM2_ADDR 0x09
+#define PID_ADDR 0x0a
+#define VER_ADDR 0x0b
+#define COM3_ADDR 0x0c
+#define COM4_ADDR 0x0d
+#define COM5_ADDR 0x0e
+#define COM6_ADDR 0x0f
+#define AECH_ADDR 0x10
+#define CLKRC_ADDR 0x11
+#define COM7_ADDR 0x02
+#define COM8_ADDR 0x13
+#define COM9_ADDR 0x14
+#define COM10_ADDR 0x15
+#define HSTART_ADDR 0x17
+#define HSTOP_ADDR 0x18
+#define VSTART_ADDR 0x19
+#define VSTOP_ADDR 0x1a
+#define PSHFT_ADDR 0x1b
+#define MIDH_ADDR 0x1c
+#define MIDL_ADDR 0x1d
+#define MVFP_ADDR 0x1e
+#define ADCCTR0_ADDR 0x20
+#define ADCCTR1_ADDR 0x21
+#define ADCCTR2_ADDR 0x22
+#define ADCCTR3_ADDR 0x23
+#define AEW_ADDR 0x24
+#define AEB_ADDR 0x25
+#define VPT_ADDR 0x26
+#define BBIAS_ADDR 0x27
+#define GBBIAS_ADDR 0x28
+#define EXHCH_ADDR 0x2a
+#define EXHCL_ADDR 0x2b
+#define RBIAS_ADDR 0x2c
+#define ADVFL_ADDR 0x2d
+#define ADVFH_ADDR 0x2e
+#define YAVE_ADDR 0x2f
+#define HSYST_ADDR 0x30
+#define HSYEN_ADDR 0x31
+#define HREF_ADDR 0x32
+#define CHLF_ADDR 0x33
+#define ARBLM_ADDR 0x34
+#define ADC_ADDR 0x37
+#define ACOM_ADDR 0x38 
+#define OFCON_ADDR 0x39
+#define TSLB_ADDR 0x3a
+#define COM11_ADDR 0x3b
+#define COM12_ADDR 0x3c
+#define COM13_ADDR 0x3d
+#define COM14_ADDR 0x3e
+#define EDGE_ADDR 0x3f
+#define COM15_ADDR 0x40
+#define COM16_ADDR 0x41
+#define COM17_ADDR 0x42
+#define REG4B_ADDR 0x4b
+#define DNSTH_ADDR 0x4c
+#define MTX1_ADDR 0x4f
+#define MTX2_ADDR 0x50
+#define MTX3_ADDR 0x51
+#define MTX4_ADDR 0x52
+#define MTX5_ADDR 0x53
+#define MTX6_ADDR 0x54
+#define BRIGHT_ADDR 0x55
+#define CONTRAST_ADDR 0x56
+#define CONTRAST_CENTER_ADDR 0x57
+#define MTXS_ADDR 0x58
+#define LCC1_ADDR 0x62
+#define LCC2_ADDR 0x63
+#define LCC3_ADDR 0x64
+#define LCC4_ADDR 0x65
+#define LCC5_ADDR 0x66
+#define MANU_ADDR 0x67
+#define MANV_ADDR 0x68
+#define GFIX_ADDR 0x69
+#define GGAIN_ADDR 0x6a
+#define DBLV_ADDR 0x6b
+#define AWBCTR1_ADDR 0x6c
+#define AWBCTR2_ADDR 0x6d
+#define AWBCTR3_ADDR 0x6e
+#define AWBCTR0_ADDR 0x6f
+#define SCALING_XSC_ADDR 0x70
+#define SCALING_YSC_ADDR 0x71
+#define SCALING_DCWCTR_ADDR 0x72
+#define SCALING_PCLK_DIV_ADDR 0x73
+#define REG74_ADDR 0x74
+#define REG75_ADDR 0x75
+#define REG76_ADDR 0x76 
+#define REG77_ADDR 0x77
+#define SLOP_ADDR 0x7a
+#define GAM1_ADDR 0x7b
+#define GAM2_ADDR 0x7c
+#define GAM3_ADDR 0x7d
+#define GAM4_ADDR 0x7e
+#define GAM5_ADDR 0x7f
+#define GAM6_ADDR 0x80
+#define GAM7_ADDR 0x81
+#define GAM8_ADDR 0x82
+#define GAM9_ADDR 0x83
+#define GAM10_ADDR 0x84
+#define GAM11_ADDR 0x85
+#define GAM12_ADDR 0x86
+#define GAM13_ADDR 0x87
+#define GAM14_ADDR 0x88
+#define GAM15_ADDR 0x89
+#define RGB444_ADDR 0x8c
+#define DM_LNL_ADDR 0x92
+#define DM_LNH_ADDR 0x93
+#define LCC6_ADDR 0x94
+#define LCC7_ADDR 0x95
+#define BD50ST_ADDR 0x9d
+#define BD60ST_ADDR 0x9e
+#define HAECC1_ADDR 0x9f
+#define HAECC2_ADDR 0x0a
+#define SCALING_PCLK_DELAY_ADDR 0xa2
+#define NT_CTRL_ADDR 0xa4
+#define BD50MAX_ADDR 0xa5
+#define HAECC3_ADDR 0xa6
+#define HAECC4_ADDR 0xa7
+#define HAECC5_ADDR 0xa8
+#define HAECC6_ADDR 0xa9
+#define HAECC7_ADDR 0xaa
+#define BD60MAX_ADDR 0xab
+#define STR_OPT_ADDR 0xac
+#define STR_R_ADDR 0xad
+#define STR_G_ADDR 0xae
+#define STR_B_ADDR 0xaf
+#define ABLC1_ADDR 0xb1
+#define THL_ST_ADDR 0xb3
+#define THL_DLT_ADDR 0xb5
+#define AD_CHB_ADDR 0xbe
+#define AD_CHR_ADDR 0xbf
+#define AD_CHGB_ADDR 0xc0
+#define AD_CHGR_ADDR 0xc1
+#define SATCTR_ADDR 0xc9
+extern unsigned long ulPeriod, dutyCycle;
+
+/*
+typedef union {
+  struct {
+    unsigned char ANS8:1;
+    unsigned char ANS9:1;
+    unsigned char ANS10:1;
+    unsigned char ANS11:1;
+    unsigned char :1;
+    unsigned char :1;
+    unsigned char :1;
+    unsigned char :1;
+  };
+} __ANSELHbits_t;
+*/
+
+
+
+
+#endif
