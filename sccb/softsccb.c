@@ -18,11 +18,13 @@
 static SCCBStruct SCCBMaster;
 
 void SCCBWrite(unsigned char DataByte,unsigned char rw){
-	SCCBMaster.currentBit=10;
+	
 	if(SCCBMaster.state!=SCCB_DONE){
+		SCCBMaster.currentBit=9;
 		SCCBMaster.byteRegister=((DataByte<<1)+rw)<<1;
 	}
 	else {
+		SCCBMaster.currentBit=10
 		SCCBMaster.byteRegister=(DataByte<<1)+rw;
 	}
 	SCCBMaster.state=SCCB_WRITE;
