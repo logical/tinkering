@@ -24,7 +24,7 @@ void SCCBWrite(unsigned char DataByte,unsigned char rw){
 		SCCBMaster.byteRegister=((DataByte<<1)+rw)<<1;
 	}
 	else {
-		SCCBMaster.currentBit=10
+		SCCBMaster.currentBit=10;
 		SCCBMaster.byteRegister=(DataByte<<1)+rw;
 	}
 	SCCBMaster.state=SCCB_WRITE;
