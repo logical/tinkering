@@ -1,4 +1,3 @@
-
 daatdisplay{
 datadisplay is a serial display for input from a microchip usb serial device 
 it includes a linux gui display and firmware for an 18f2550
@@ -16,9 +15,11 @@ plasmapkg -i helpyhelperman/
 
 then add the widget to your desktop.
 }
+
 Logwatcher{
 Logwatcher is a firewall notification program inspired by firestarter firewall.
 
+run make
 run logwatcher
 
 the settings are for the log file to watch and the regex filter to apply to new log posts. 
