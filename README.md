@@ -16,3 +16,12 @@ plasmapkg -i helpyhelperman/
 
 then add the widget to your desktop.
 }
+Logwatcher{
+Logwatcher is a firewall notification program inspired by firestarter firewall.
+
+run logwatcher
+
+the settings are for the log file to watch and the regex filter to apply to new log posts. 
+Good firewall rules are required for satisfactory operation.
+root access may be required for log access. Tested on XFCE only.
+}
