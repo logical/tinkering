@@ -48,6 +48,7 @@ void getsettings(void){
     fclose(settingsfile);  
    regcomp(&pattern, regex_filter_text, 0);      
    logfile=fopen(log_file_name,"r");
+   fseek(logfile, 0L, SEEK_END);
 
   
 }
@@ -94,8 +95,10 @@ checklog (gpointer data)
     fgets(buf, MAX_BUF,logfile);
     if(strlen(buf)){
       if(!regexec(&pattern,buf,0,NULL,0)){
+	GtkTextIter enditer;
 	gtk_status_icon_set_from_pixbuf(status_icon,hiticonpixbuf);
-	gtk_text_buffer_insert_at_cursor(buffer, buf, strlen(buf));
+	gtk_text_buffer_get_end_iter(buffer,&enditer);
+	gtk_text_buffer_insert(buffer,&enditer, buf, strlen(buf));
 	gtk_status_icon_set_tooltip_text(GTK_STATUS_ICON(status_icon), "Firewall is warm");
       }
     } 
@@ -121,8 +124,13 @@ settings_save (GtkWidget *widget,
   gtk_widget_hide(settingswindow);
   const gchar* logname=gtk_entry_buffer_get_text(gtk_entry_get_buffer(GTK_ENTRY(settingslogfile)));
   const gchar* regextext=gtk_entry_buffer_get_text(gtk_entry_get_buffer(GTK_ENTRY(settingsfilter)));
-  g_printf("%s%s",logname,regextext);	
-  //regcomp(&pattern, regex_filter_text, 0);      
+//  g_printf("%s%s",logname,regextext);	
+  fclose(logfile);
+  logfile=fopen(logname,"r");
+  fseek(logfile, 0L, SEEK_END);
+  regfree(&pattern);
+  regcomp(&pattern, regex_filter_text, 0);      
+
   //logfile=fopen(log_file_name,"r");
   savesettings((char*)logname,(char*)regextext);
   
@@ -190,7 +198,6 @@ int main( int argc,
 
   gtk_init( &argc, &argv );
     getsettings();
-    fseek(logfile, 0L, SEEK_END);
     okiconpixbuf = gdk_pixbuf_new_from_xpm_data( firewall_xpm);
     hiticonpixbuf = gdk_pixbuf_new_from_xpm_data( firewall2_xpm);
     status_icon = gtk_status_icon_new_from_pixbuf(okiconpixbuf);
