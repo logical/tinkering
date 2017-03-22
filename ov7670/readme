@@ -1,0 +1,4 @@
+This project is an ov7670 camera connected to  stm32f103c8t6.
+The chip can send a very small black and white image through the serial port
+serialimage is a linux reciever program
+stm32_ov7670.ino and ov7670.h are stm32duino source files.
