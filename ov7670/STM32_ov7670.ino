@@ -1,20 +1,3 @@
-/*
-  STM32 based OV7670 handling
-  ================================
-  Pin connections:
-  ----------------
-    OV7670  STM32F103C8T6 generic
-  1.  Vcc   3.3V
-  2.  GND   GND
-  3.  SCL   PB6
-  4.  SDA   PB7
-  5.  Vsync   PB4 (in)
-  6.  Href    PB5 (in)
-  7.  Pclk    PB3 (in)
-  8.  Xclk    PB0 (out)
-  9.  D7..D0  PA7..PA0  (in)
-
-*/
 
 #include <Wire.h>
 #include "ov7670.h"
